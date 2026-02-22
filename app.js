@@ -1,5 +1,5 @@
 const fs = require('fs');
-feature/kasun/read-file
+
 fs.writeFile('file.txt', 'Hello World!', function (err) {
  if (err) throw err;
  console.log('File saved!');
@@ -10,3 +10,15 @@ fs.readFile('file.txt', 'utf8', function (err, data) {
  console.log(data);
 });
 
+const https = require('https');
+https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => {
+ let data = '';
+ resp.on('data', (chunk) => {
+ data += chunk;
+ });
+ resp.on('end', () => {
+ console.log(JSON.parse(data));
+ });
+}).on('error', (err) => {
+ console.log("Error: " + err.message);
+});
