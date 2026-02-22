@@ -10,6 +10,7 @@ fs.readFile("file.txt", "utf8", function (err, data) {
   console.log(data);
 });
 
+
 const myPromise = new Promise((resolve, reject) => {
   if (condition) {
     resolve("Success!");
@@ -24,3 +25,14 @@ myPromise
   .catch((error) => {
     console.log(error);
   });
+
+async function myFunction() {
+  try {
+    const result = await myPromise;
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+myFunction();
+
