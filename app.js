@@ -1,5 +1,5 @@
 const fs = require('fs');
-feature/kasun/read-file
+
 fs.writeFile('file.txt', 'Hello World!', function (err) {
  if (err) throw err;
  console.log('File saved!');
@@ -10,3 +10,5 @@ fs.readFile('file.txt', 'utf8', function (err, data) {
  console.log(data);
 });
 
+const myModule = require('./my-module.js');
+console.log(myModule.myFunction());
